@@ -1,0 +1,35 @@
+<div class="field">
+  <table class="table table stripped">
+	
+	<tr>
+		<th>Project</th>
+		<th>Hour</th>
+		<th>Description</th>
+		<!-- <th>Image</th> -->
+		<th>Action</th>
+	</tr>
+
+    <tbody>
+		<% @users.each do |k| %>
+	<tr>
+		<td><%= k.project%></td>
+		<td><%= k.hour %></td>
+		<td><%= k.description %></td>
+		<td><%#= image_tag(k.image_file_name, :class => 'list_image' ) %><%#= image_tag k.image_file_name if k.image_file_name.present? %></td>
+		<td><%= link_to "Show", :controller => "users", :action => "show", :id => k.id %></td>
+	</tr>
+	<% end %>
+ 	</tbody>
+  </table>
+</div>
+
+<style>
+.field
+{
+	width:400px;
+	margin-left: 370px;
+	color: yellow;
+	margin-top: 180px;
+	background-color: grey;
+}
+</style>

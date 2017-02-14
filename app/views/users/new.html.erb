@@ -1,0 +1,66 @@
+<div class="control">
+	<% if @user.errors.any?%>
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+			<li><%= msg%></li>
+			<% end %>
+		</ul>
+	<% end %>
+	
+	<%= form_for @user do |f| %>
+	
+	<div class="control-group">
+		<%= f.label :projct %>
+		<%= f.text_field :project, :class => "a" %>
+	</div><br>
+
+    <div class="control-group">
+    	<%= f.label :hour %>
+    	<%= f.text_field :hour, :class => "a"%>
+    </div><br>
+
+    <div class="control-group">
+    	<%=f.label :description %>
+    	<%= f.text_area :description, :class => "a" %>
+    </div><br>
+
+    <div class="control-group">
+    	<%= f.label :Choose_the_picture %>
+    	<%= f.file_field :image, :class => "a" %>
+    </div><br>
+
+    <div class="btn btn-info">
+    	<%= f.submit "Save", :disable_with => "Please Wait", :class => "b" %>
+    </div>
+    
+    <% end %>
+
+</div>
+
+<style>
+.control
+{
+	background-color: red;
+	width:500px;
+	color:yellow;
+	border-radius: 10px;
+	padding: 20px;
+	margin-left: 350px;
+	margin-top: 150px;
+
+}
+.a {
+	float: right;
+	margin-right: 100px;
+}
+.b
+{
+	float: center;
+	margin-left: 220px;
+}
+body
+{
+	background-color: black;
+}
+</style>
+

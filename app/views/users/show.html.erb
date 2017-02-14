@@ -1,0 +1,8 @@
+<div class="field">
+    <%= form_for :user do |f| %>
+    <div class="control">
+        <%= f.label :Project %>
+		<%= f.select :id, User.all.map {|c| [ c.project, c.id ]}  %>
+	</div>
+ 	<% end %>
+</div>
